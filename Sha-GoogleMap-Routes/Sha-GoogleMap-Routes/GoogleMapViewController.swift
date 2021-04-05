@@ -89,13 +89,11 @@ class GoogleMapViewController: UIViewController {
         let gmsPath = GMSPath.init(fromEncodedPath: polyLinePoints)
         let polyLine = GMSPolyline.init(path: gmsPath)
         polyLine.strokeWidth = 4
-        polyLine.strokeColor = .blue
+        polyLine.strokeColor = .green
         polyLine.map = self.googleMapView
     }
     
     func setGSMMarker() {
-        print("Source Lat",sourceLatitude," Long",sourceLongitude)
-        print("Destination Lat",destinationLatitude," Long",destinationLongitude)
         let sourceMaker = GMSMarker()
         let destinationMaker = GMSMarker()
         
@@ -116,10 +114,27 @@ class GoogleMapViewController: UIViewController {
         googleMapView.animate(to: camera)
     }
     
+    func updateNavTitle() {
+        var charIndex = 0.0
+        let labelText = "🧭Sha Google Map Routes🧭"
+        title = ""
+        for text in labelText {
+            print("Timers: ", 0.5 * charIndex)
+            print(text)
+            print("------")
+            Timer.scheduledTimer(withTimeInterval: 0.2 * charIndex, repeats: false) { (timer) in
+                self.title?.append(text)
+            }
+            charIndex += 1
+
+        }
+    }
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateNavTitle()
         getRoute();
         
     }

@@ -47,6 +47,8 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TabCell",for: indexPath) as! SourceDestinationTableViewCell
         cell.sourceLabel.text = sourceRoutes[indexPath.item]
         cell.destinationLabel.text = destinationRoutes[indexPath.item]
+        cell.routeImage.image = UIImage(systemName: "location.fill")
+        cell.routeImage.tintColor = .red
         return cell
     }
     
