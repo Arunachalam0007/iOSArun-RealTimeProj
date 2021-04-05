@@ -1,2 +1,2 @@
 # Ignoring Pod Folder
-!/Pods/
+!/Pods/*
