@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		DBB57DED261B26FC00A707EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB57DEB261B26FC00A707EA /* Main.storyboard */; };
 		DBB57DEF261B26FD00A707EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB57DEE261B26FD00A707EA /* Assets.xcassets */; };
 		DBB57DF2261B26FD00A707EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB57DF0261B26FD00A707EA /* LaunchScreen.storyboard */; };
+		DBB57EB2261B3A4000A707EA /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */; };
 		F0A66E25E43298EE180EEC55 /* Pods_Sha_GoogleMap_Routes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3048857B4EBA91170E93AF0 /* Pods_Sha_GoogleMap_Routes.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		DBB57DEE261B26FD00A707EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBB57DF1261B26FD00A707EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB57DF3261B26FD00A707EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,6 @@
 				27CBE3BF4054EFB90DC8B7E2 /* Pods-Sha-GoogleMap-Routes.debug.xcconfig */,
 				B95DC0AEA2B363A9015A7A61 /* Pods-Sha-GoogleMap-Routes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				DBB57DEE261B26FD00A707EA /* Assets.xcassets */,
 				DBB57DF0261B26FD00A707EA /* LaunchScreen.storyboard */,
 				DBB57DF3261B26FD00A707EA /* Info.plist */,
+				DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */,
 			);
 			path = "Sha-GoogleMap-Routes";
 			sourceTree = "<group>";
@@ -226,6 +228,7 @@
 			files = (
 				DBB57DEA261B26FC00A707EA /* ViewController.swift in Sources */,
 				DBB57DE6261B26FC00A707EA /* AppDelegate.swift in Sources */,
+				DBB57EB2261B3A4000A707EA /* GoogleMapViewController.swift in Sources */,
 				DBB57DE8261B26FC00A707EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +292,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -350,6 +354,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
