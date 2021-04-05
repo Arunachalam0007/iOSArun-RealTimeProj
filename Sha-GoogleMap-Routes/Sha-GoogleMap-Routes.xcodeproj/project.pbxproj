@@ -16,6 +16,7 @@
 		DBB57EB2261B3A4000A707EA /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */; };
 		DBB57EC7261B644A00A707EA /* SourceAndDestination.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB57EC6261B644A00A707EA /* SourceAndDestination.plist */; };
 		DBB57ECA261B674400A707EA /* SourceDestinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB57EC9261B674400A707EA /* SourceDestinationTableViewCell.swift */; };
+		DBCDCCE8261B9A1B00C696AE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DBCDCCE7261B9A1B00C696AE /* README.md */; };
 		F0A66E25E43298EE180EEC55 /* Pods_Sha_GoogleMap_Routes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3048857B4EBA91170E93AF0 /* Pods_Sha_GoogleMap_Routes.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 		DBB57EC6261B644A00A707EA /* SourceAndDestination.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SourceAndDestination.plist; sourceTree = "<group>"; };
 		DBB57EC9261B674400A707EA /* SourceDestinationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDestinationTableViewCell.swift; sourceTree = "<group>"; };
+		DBCDCCE7261B9A1B00C696AE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		DBB57DD9261B26FC00A707EA = {
 			isa = PBXGroup;
 			children = (
+				DBCDCCE7261B9A1B00C696AE /* README.md */,
 				DBB57DE4261B26FC00A707EA /* Sha-GoogleMap-Routes */,
 				DBB57DE3261B26FC00A707EA /* Products */,
 				58EEFCB70D7C1552122B1205 /* Pods */,
@@ -162,6 +165,7 @@
 			files = (
 				DBB57DF2261B26FD00A707EA /* LaunchScreen.storyboard in Resources */,
 				DBB57DEF261B26FD00A707EA /* Assets.xcassets in Resources */,
+				DBCDCCE8261B9A1B00C696AE /* README.md in Resources */,
 				DBB57EC7261B644A00A707EA /* SourceAndDestination.plist in Resources */,
 				DBB57DED261B26FC00A707EA /* Main.storyboard in Resources */,
 			);
