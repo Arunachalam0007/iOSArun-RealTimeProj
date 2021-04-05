@@ -14,6 +14,8 @@
 		DBB57DEF261B26FD00A707EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB57DEE261B26FD00A707EA /* Assets.xcassets */; };
 		DBB57DF2261B26FD00A707EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB57DF0261B26FD00A707EA /* LaunchScreen.storyboard */; };
 		DBB57EB2261B3A4000A707EA /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */; };
+		DBB57EC7261B644A00A707EA /* SourceAndDestination.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB57EC6261B644A00A707EA /* SourceAndDestination.plist */; };
+		DBB57ECA261B674400A707EA /* SourceDestinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB57EC9261B674400A707EA /* SourceDestinationTableViewCell.swift */; };
 		F0A66E25E43298EE180EEC55 /* Pods_Sha_GoogleMap_Routes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3048857B4EBA91170E93AF0 /* Pods_Sha_GoogleMap_Routes.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		DBB57DF1261B26FD00A707EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB57DF3261B26FD00A707EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
+		DBB57EC6261B644A00A707EA /* SourceAndDestination.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SourceAndDestination.plist; sourceTree = "<group>"; };
+		DBB57EC9261B674400A707EA /* SourceDestinationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDestinationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +90,10 @@
 				DBB57DE7261B26FC00A707EA /* SceneDelegate.swift */,
 				DBB57DE9261B26FC00A707EA /* ViewController.swift */,
 				DBB57DEB261B26FC00A707EA /* Main.storyboard */,
+				DBB57EC9261B674400A707EA /* SourceDestinationTableViewCell.swift */,
 				DBB57DEE261B26FD00A707EA /* Assets.xcassets */,
 				DBB57DF0261B26FD00A707EA /* LaunchScreen.storyboard */,
+				DBB57EC6261B644A00A707EA /* SourceAndDestination.plist */,
 				DBB57DF3261B26FD00A707EA /* Info.plist */,
 				DBB57EB1261B3A4000A707EA /* GoogleMapViewController.swift */,
 			);
@@ -156,6 +162,7 @@
 			files = (
 				DBB57DF2261B26FD00A707EA /* LaunchScreen.storyboard in Resources */,
 				DBB57DEF261B26FD00A707EA /* Assets.xcassets in Resources */,
+				DBB57EC7261B644A00A707EA /* SourceAndDestination.plist in Resources */,
 				DBB57DED261B26FC00A707EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +236,7 @@
 				DBB57DEA261B26FC00A707EA /* ViewController.swift in Sources */,
 				DBB57DE6261B26FC00A707EA /* AppDelegate.swift in Sources */,
 				DBB57EB2261B3A4000A707EA /* GoogleMapViewController.swift in Sources */,
+				DBB57ECA261B674400A707EA /* SourceDestinationTableViewCell.swift in Sources */,
 				DBB57DE8261B26FC00A707EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

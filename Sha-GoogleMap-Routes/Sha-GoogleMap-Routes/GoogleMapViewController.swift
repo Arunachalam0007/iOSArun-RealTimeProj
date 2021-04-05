@@ -17,9 +17,9 @@ class GoogleMapViewController: UIViewController {
     
     
     @IBOutlet weak var googleMapView: GMSMapView!
-    
-    var sourceLocation:String = "Chengapattu"
-    var destinationLocation:String = "Adayar"
+ 
+    var sourceLocation:String = "Tambaram"
+    var destinationLocation:String = "Madurai"
     var apiKey:String = "AIzaSyAqlEbVFW9gPe0_sqsIYd5lw3-9uUfG5A4"
     var sourceLatitude:Double = 0.0
     var sourceLongitude:Double = 0.0
@@ -121,8 +121,6 @@ class GoogleMapViewController: UIViewController {
         super.viewDidLoad()
         
         getRoute();
-        // Do any additional setup after loading the view.
-        
         
     }
     
