@@ -103,6 +103,8 @@
 				DBB57DDE261B26FC00A707EA /* Sources */,
 				DBB57DDF261B26FC00A707EA /* Frameworks */,
 				DBB57DE0261B26FC00A707EA /* Resources */,
+				A61CE730FFF36F27D9AFB819 /* [CP] Embed Pods Frameworks */,
+				2D8F482F9DCFAF9CC342E4D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +161,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D8F482F9DCFAF9CC342E4D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha-GoogleMap-Routes/Pods-Sha-GoogleMap-Routes-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha-GoogleMap-Routes/Pods-Sha-GoogleMap-Routes-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sha-GoogleMap-Routes/Pods-Sha-GoogleMap-Routes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A61CE730FFF36F27D9AFB819 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha-GoogleMap-Routes/Pods-Sha-GoogleMap-Routes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha-GoogleMap-Routes/Pods-Sha-GoogleMap-Routes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sha-GoogleMap-Routes/Pods-Sha-GoogleMap-Routes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AE25C9F8E83F760624D399FF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
