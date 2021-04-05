@@ -38,7 +38,6 @@ class GoogleMapViewController: UIViewController {
     
     func getRoute() {
         let mapAPIURL = getMapAPIURL()
-        print("API KEY: ",mapAPIURL)
         
         AF.request(mapAPIURL).responseJSON { (response) in
             guard let responseData = response.data else {
@@ -132,9 +131,6 @@ class GoogleMapViewController: UIViewController {
         let labelText = "🧭Sha Google Map Routes🧭"
         title = ""
         for text in labelText {
-            print("Timers: ", 0.5 * charIndex)
-            print(text)
-            print("------")
             Timer.scheduledTimer(withTimeInterval: 0.2 * charIndex, repeats: false) { (timer) in
                 self.title?.append(text)
             }
