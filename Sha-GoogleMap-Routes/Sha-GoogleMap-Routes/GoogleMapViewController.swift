@@ -12,31 +12,71 @@ import SwiftyJSON
 
 class GoogleMapViewController: UIViewController {
     
-    var sourceLocation:String = ""
-    var destinationLocation:String = ""
-    var apiKey:String = ""
+//
+//    @IBOutlet weak var googleMapView: GMSMapView!
+    
+    
+    @IBOutlet weak var googleMapView: GMSMapView!
+    
+    var sourceLocation:String = "Chengapattu"
+    var destinationLocation:String = "Adayar"
+    var apiKey:String = "AIzaSyAqlEbVFW9gPe0_sqsIYd5lw3-9uUfG5A4"
     var sourceLatitude:Double = 0.0
     var sourceLongitude:Double = 0.0
     var destinationLatitude:Double = 0.0
     var destinationLongitude:Double = 0.0
+    var polyLinePoints:String = ""
     
-    @IBOutlet var googleMapView: GMSMapView!
+   
+    
     
     func getMapAPIURL() -> String {
         let mapURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(sourceLocation)&destination=\(destinationLocation)&key=\(apiKey)"
         return mapURL
     }
     
-    func setRoute(mapAPIURL:String) {
+    func getRoute() {
+        let mapAPIURL = getMapAPIURL()
+        print("API KEY: ",mapAPIURL)
         
         AF.request(mapAPIURL).responseJSON { (response) in
             guard let responseData = response.data else {
                 return
             }
-            print("responData: ",responseData)
             do{
+                // Convert Bytes to JSON
                 let responseJSONData = try JSON(data: responseData)
-                print("responseJSONData: ",responseJSONData)
+                let routes = responseJSONData["routes"].arrayValue
+                
+                for route in routes {
+                    
+                    let legs = route["legs"].arrayValue
+                    
+                    // Get Souce and Destination lat & Lng Values
+                    for leg in legs {
+                        let startLocation = leg["start_location"].dictionary
+                        let endLocation = leg["end_location"].dictionary
+                       
+                        if let sourceLat = startLocation?["lat"]?.double, let sourceLong = startLocation?["lng"]?.double{
+                            self.sourceLatitude = sourceLat
+                            self.sourceLongitude = sourceLong
+                        }
+                        if let destinationLat = endLocation?["lat"]?.double, let destinationLong = endLocation?["lng"]?.double{
+                            self.destinationLatitude = destinationLat
+                            self.destinationLongitude = destinationLong
+                        }
+                    }
+                    
+                    // get Polyline Points
+                    let overviewPolyline = route["overview_polyline"].dictionary
+                    if let points = overviewPolyline?["points"]?.string {
+                        self.polyLinePoints = points
+                    }
+                }
+               // create a polyline for source and destination with use of polyLinePoints
+               self.setGMSPolyLine()
+               // Create a Marker for source and destination
+               self.setGSMMarker()
             }
             catch let error {
                 print(error.localizedDescription)
@@ -45,25 +85,45 @@ class GoogleMapViewController: UIViewController {
         
     }
     
+    func setGMSPolyLine() {
+        let gmsPath = GMSPath.init(fromEncodedPath: polyLinePoints)
+        let polyLine = GMSPolyline.init(path: gmsPath)
+        polyLine.strokeWidth = 4
+        polyLine.strokeColor = .blue
+        polyLine.map = self.googleMapView
+    }
+    
     func setGSMMarker() {
-        
+        print("Source Lat",sourceLatitude," Long",sourceLongitude)
+        print("Destination Lat",destinationLatitude," Long",destinationLongitude)
         let sourceMaker = GMSMarker()
         let destinationMaker = GMSMarker()
         
-        sourceMaker.position = CLLocationCoordinate2D(latitude: Double(sourceLatitude), longitude: sourceLongitude)
+        sourceMaker.position = CLLocationCoordinate2D(latitude: sourceLatitude, longitude: sourceLongitude)
         sourceMaker.title = sourceLocation
-        sourceMaker.map = googleMapView
+        sourceMaker.map = self.googleMapView
         
-        destinationMaker.position = CLLocationCoordinate2D(latitude: Double(destinationLatitude), longitude: destinationLongitude)
+        destinationMaker.position = CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongitude)
         destinationMaker.title = destinationLocation
-        destinationMaker.map = googleMapView
+        destinationMaker.map = self.googleMapView
+        
+        // Set the camera position to the source and destination
+        setCamerPostition(sourceMarker: sourceMaker)
+    }
+    
+    func setCamerPostition(sourceMarker: GMSMarker) {
+        let camera = GMSCameraPosition(target: sourceMarker.position, zoom: 10.5)
+        googleMapView.animate(to: camera)
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        getRoute();
         // Do any additional setup after loading the view.
+        
+        
     }
     
 
