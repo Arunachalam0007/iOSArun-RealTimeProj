@@ -55,7 +55,21 @@ extension ViewController: UITableViewDataSource {
 
 
 extension ViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         200
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShaMapView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let gMapVC = segue.destination as! GoogleMapViewController
+        if let indexPath = self.tab.indexPathForSelectedRow?.item {
+            gMapVC.sourceLocation = sourceRoutes[indexPath]
+            gMapVC.destinationLocation = destinationRoutes[indexPath]
+            gMapVC.apiKey = "AIzaSyAqlEbVFW9gPe0_sqsIYd5lw3-9uUfG5A4"
+        }
+    }
+    
 }

@@ -18,9 +18,9 @@ class GoogleMapViewController: UIViewController {
     
     @IBOutlet weak var googleMapView: GMSMapView!
  
-    var sourceLocation:String = "Tambaram"
-    var destinationLocation:String = "Madurai"
-    var apiKey:String = "AIzaSyAqlEbVFW9gPe0_sqsIYd5lw3-9uUfG5A4"
+    var sourceLocation:String = ""
+    var destinationLocation:String = ""
+    var apiKey:String = ""
     var sourceLatitude:Double = 0.0
     var sourceLongitude:Double = 0.0
     var destinationLatitude:Double = 0.0
