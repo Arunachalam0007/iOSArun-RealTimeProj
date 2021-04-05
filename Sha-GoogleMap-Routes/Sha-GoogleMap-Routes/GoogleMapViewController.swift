@@ -12,10 +12,7 @@ import SwiftyJSON
 
 class GoogleMapViewController: UIViewController {
     
-//
-//    @IBOutlet weak var googleMapView: GMSMapView!
-    
-    
+
     @IBOutlet weak var googleMapView: GMSMapView!
  
     var sourceLocation:String = ""
@@ -28,12 +25,16 @@ class GoogleMapViewController: UIViewController {
     var polyLinePoints:String = ""
     
    
-    
+    // MARK: - GetMapApi
+
     
     func getMapAPIURL() -> String {
         let mapURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(sourceLocation)&destination=\(destinationLocation)&key=\(apiKey)"
         return mapURL
     }
+    
+    // MARK: - GetRoute
+
     
     func getRoute() {
         let mapAPIURL = getMapAPIURL()
@@ -52,7 +53,7 @@ class GoogleMapViewController: UIViewController {
                     
                     let legs = route["legs"].arrayValue
                     
-                    // Get Souce and Destination lat & Lng Values
+                    // Get Source and Destination lat & Lng Values
                     for leg in legs {
                         let startLocation = leg["start_location"].dictionary
                         let endLocation = leg["end_location"].dictionary
@@ -85,13 +86,19 @@ class GoogleMapViewController: UIViewController {
         
     }
     
+    // MARK: - SetGMSPolyLine: Points source and destination
+
+    
     func setGMSPolyLine() {
         let gmsPath = GMSPath.init(fromEncodedPath: polyLinePoints)
         let polyLine = GMSPolyline.init(path: gmsPath)
         polyLine.strokeWidth = 4
-        polyLine.strokeColor = .green
+        polyLine.strokeColor = .blue
         polyLine.map = self.googleMapView
     }
+    
+    // MARK: - setGSMMarker: create source and destination marker
+
     
     func setGSMMarker() {
         let sourceMaker = GMSMarker()
@@ -109,10 +116,16 @@ class GoogleMapViewController: UIViewController {
         setCamerPostition(sourceMarker: sourceMaker)
     }
     
+    // MARK: - GMSCameraPosition: Which will automationally animate to source and destination
+
+    
     func setCamerPostition(sourceMarker: GMSMarker) {
         let camera = GMSCameraPosition(target: sourceMarker.position, zoom: 10.5)
         googleMapView.animate(to: camera)
     }
+    
+    // MARK: - Updating Nav Title
+
     
     func updateNavTitle() {
         var charIndex = 0.0
@@ -136,7 +149,6 @@ class GoogleMapViewController: UIViewController {
         super.viewDidLoad()
         updateNavTitle()
         getRoute();
-        
     }
     
 

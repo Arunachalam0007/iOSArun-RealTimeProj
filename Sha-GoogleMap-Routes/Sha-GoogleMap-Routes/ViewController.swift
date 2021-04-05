@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Get All Source and Destination from PLIST
+
+    
     func getSourceAndDestination() {
         if let path = Bundle.main.path(forResource: "SourceAndDestination", ofType: "plist") {
             let dict = NSDictionary(contentsOfFile: path)
@@ -36,6 +39,9 @@ class ViewController: UIViewController {
         }
     }
 }
+
+// MARK: - UITableViewDataSource for Create Rows
+
 
 extension ViewController: UITableViewDataSource {
     
@@ -54,6 +60,8 @@ extension ViewController: UITableViewDataSource {
     
     
 }
+
+// MARK: - UITableViewDelegate performing delegaet operation and segue
 
 
 extension ViewController : UITableViewDelegate {
