@@ -18,7 +18,6 @@ class ProfileWebService {
     
     static func fetchProfileData<T>(profileResource: ProfileResource<T>, completion: @escaping (T?) ->()) {
         
-     //   let request = NSMutableURLRequest(url: NSURL(string: Constants.Profile.url)! as URL)
         let request = NSMutableURLRequest(url: profileResource.url)
         request.setValue(profileResource.authBearer, forHTTPHeaderField: "Authorization")
         request.httpMethod = profileResource.reqMethod
