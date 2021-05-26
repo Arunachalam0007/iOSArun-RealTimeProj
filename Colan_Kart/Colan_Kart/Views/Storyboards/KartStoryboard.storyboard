@@ -33,6 +33,9 @@
                     <navigationItem key="navigationItem" id="Rvd-F0-85z">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Cud-6k-qXp">
                             <color key="tintColor" systemColor="systemPinkColor"/>
+                            <connections>
+                                <action selector="userLogout:" destination="vml-qS-v6F" id="AqW-w7-ANh"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill.badge.plus" catalog="system" id="YqM-lG-yJP">
                             <color key="tintColor" red="1" green="0.12883876720000001" blue="0.317547841" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -17,6 +17,10 @@
 		DB2FCFFF265E6973001A6F21 /* KartInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFFE265E6973001A6F21 /* KartInfoTableViewController.swift */; };
 		DB2FD002265E7CB7001A6F21 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD001265E7CB7001A6F21 /* MainTabController.swift */; };
 		DB2FD05F265E8816001A6F21 /* Colan_Kart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */; };
+		DB2FD06B265E8DDA001A6F21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD06A265E8DDA001A6F21 /* LoginViewController.swift */; };
+		DB2FD06E265E8E35001A6F21 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD06D265E8E35001A6F21 /* Extensions.swift */; };
+		DB2FD070265E8EE2001A6F21 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD06F265E8EE2001A6F21 /* AuthenticationViewModel.swift */; };
+		DB2FD072265E9627001A6F21 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD071265E9627001A6F21 /* RegistrationViewController.swift */; };
 		DB926661265D171500E794EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926660265D171500E794EE /* AppDelegate.swift */; };
 		DB926663265D171500E794EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926662265D171500E794EE /* SceneDelegate.swift */; };
 		DB926665265D171500E794EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926664265D171500E794EE /* ProfileViewController.swift */; };
@@ -40,6 +44,10 @@
 		DB2FCFFE265E6973001A6F21 /* KartInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartInfoTableViewController.swift; sourceTree = "<group>"; };
 		DB2FD001265E7CB7001A6F21 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		DB2FD05E265E8816001A6F21 /* Colan_Kart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Colan_Kart.xcdatamodel; sourceTree = "<group>"; };
+		DB2FD06A265E8DDA001A6F21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DB2FD06D265E8E35001A6F21 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DB2FD06F265E8EE2001A6F21 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		DB2FD071265E9627001A6F21 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DB92665D265D171500E794EE /* Colan_Kart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colan_Kart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB926660265D171500E794EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB926662265D171500E794EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,23 @@
 			path = Datas;
 			sourceTree = "<group>";
 		};
+		DB2FD069265E8DC9001A6F21 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FD06A265E8DDA001A6F21 /* LoginViewController.swift */,
+				DB2FD071265E9627001A6F21 /* RegistrationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DB2FD06C265E8E26001A6F21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FD06D265E8E35001A6F21 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DB926654265D171500E794EE = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */,
+				DB2FD06C265E8E26001A6F21 /* Extensions */,
 				DB2FD000265E7BB4001A6F21 /* Datas */,
 				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
@@ -139,6 +165,7 @@
 		DB926675265D175500E794EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB2FD069265E8DC9001A6F21 /* Authentication */,
 				DB92667C265D2BE200E794EE /* Profile */,
 				DB2FCFF4265E2A9B001A6F21 /* Kart */,
 				DB2FD001265E7CB7001A6F21 /* MainTabController.swift */,
@@ -151,6 +178,7 @@
 			children = (
 				DB92667E265D2C8400E794EE /* ProfileViewModel.swift */,
 				DB2FCFFC265E4B61001A6F21 /* KartViewModel.swift */,
+				DB2FD06F265E8EE2001A6F21 /* AuthenticationViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -272,7 +300,9 @@
 			files = (
 				DB926683265D314400E794EE /* ProfileWebService.swift in Sources */,
 				DB2FD05F265E8816001A6F21 /* Colan_Kart.xcdatamodeld in Sources */,
+				DB2FD070265E8EE2001A6F21 /* AuthenticationViewModel.swift in Sources */,
 				DB2FCFFB265E4A34001A6F21 /* KartModel.swift in Sources */,
+				DB2FD06B265E8DDA001A6F21 /* LoginViewController.swift in Sources */,
 				DB2FCFF7265E3810001A6F21 /* KartCell.swift in Sources */,
 				DB926681265D2CCE00E794EE /* ProfileModel.swift in Sources */,
 				DB926665265D171500E794EE /* ProfileViewController.swift in Sources */,
@@ -280,6 +310,8 @@
 				DB2FD002265E7CB7001A6F21 /* MainTabController.swift in Sources */,
 				DB2FCFFD265E4B61001A6F21 /* KartViewModel.swift in Sources */,
 				DB2FCFFF265E6973001A6F21 /* KartInfoTableViewController.swift in Sources */,
+				DB2FD072265E9627001A6F21 /* RegistrationViewController.swift in Sources */,
+				DB2FD06E265E8E35001A6F21 /* Extensions.swift in Sources */,
 				DB2FCFF3265E2A90001A6F21 /* KartTableViewController.swift in Sources */,
 				DB926685265D3C3A00E794EE /* Constants.swift in Sources */,
 				DB92667F265D2C8400E794EE /* ProfileViewModel.swift in Sources */,

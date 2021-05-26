@@ -20,6 +20,12 @@ class KartTableViewController: UITableViewController {
         navigationController?.pushViewController(kartInfoVC, animated: true)
     }
     
+    @IBAction func userLogout(_ sender: UIBarButtonItem) {
+        let loginVC =  LoginViewController()
+        UserDefaults.standard.setIsloggedIn(false)
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true, completion: nil)
+    }
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
