@@ -17,5 +17,9 @@ struct Constants {
         static let authBearer:String = "Bearer \(accessToken)"
     }
     
+    struct Kart {
+        static var kartCellIdentifier: String = "KartCellIdentifier"
+        static var kartNibName: String = "KartCell"
+    }
     
 }

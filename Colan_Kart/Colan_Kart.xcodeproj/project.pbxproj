@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB2FCFEA265E2014001A6F21 /* KartData.json in Resources */ = {isa = PBXBuildFile; fileRef = DB2FCFE9265E2014001A6F21 /* KartData.json */; };
+		DB2FCFEC265E26B7001A6F21 /* KartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB2FCFEB265E26B7001A6F21 /* KartStoryboard.storyboard */; };
+		DB2FCFF3265E2A90001A6F21 /* KartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFF2265E2A90001A6F21 /* KartTableViewController.swift */; };
+		DB2FCFF7265E3810001A6F21 /* KartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFF5265E3810001A6F21 /* KartCell.swift */; };
+		DB2FCFF8265E3810001A6F21 /* KartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2FCFF6265E3810001A6F21 /* KartCell.xib */; };
 		DB926661265D171500E794EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926660265D171500E794EE /* AppDelegate.swift */; };
 		DB926663265D171500E794EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926662265D171500E794EE /* SceneDelegate.swift */; };
 		DB926665265D171500E794EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926664265D171500E794EE /* ProfileViewController.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB2FCFE9265E2014001A6F21 /* KartData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = KartData.json; sourceTree = "<group>"; };
+		DB2FCFEB265E26B7001A6F21 /* KartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KartStoryboard.storyboard; sourceTree = "<group>"; };
+		DB2FCFF2265E2A90001A6F21 /* KartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartTableViewController.swift; sourceTree = "<group>"; };
+		DB2FCFF5265E3810001A6F21 /* KartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartCell.swift; sourceTree = "<group>"; };
+		DB2FCFF6265E3810001A6F21 /* KartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KartCell.xib; sourceTree = "<group>"; };
 		DB92665D265D171500E794EE /* Colan_Kart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colan_Kart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB926660265D171500E794EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB926662265D171500E794EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB2FCFF4265E2A9B001A6F21 /* Kart */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FCFF2265E2A90001A6F21 /* KartTableViewController.swift */,
+			);
+			path = Kart;
+			sourceTree = "<group>";
+		};
+		DB2FCFF9265E3845001A6F21 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FCFF5265E3810001A6F21 /* KartCell.swift */,
+				DB2FCFF6265E3810001A6F21 /* KartCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DB926654265D171500E794EE = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +91,11 @@
 		DB92665F265D171500E794EE /* Colan_Kart */ = {
 			isa = PBXGroup;
 			children = (
+				DB2FCFE9265E2014001A6F21 /* KartData.json */,
 				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
 				DB926677265D176900E794EE /* Models */,
+				DB2FCFF9265E3845001A6F21 /* Cells */,
 				DB926676265D175E00E794EE /* View Models */,
 				DB926675265D175500E794EE /* Controllers */,
 				DB926674265D173100E794EE /* Views */,
@@ -91,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DB92667C265D2BE200E794EE /* Profile */,
+				DB2FCFF4265E2A9B001A6F21 /* Kart */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,14 +157,6 @@
 			path = "Web Services";
 			sourceTree = "<group>";
 		};
-		DB92667A265D2BBE00E794EE /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				DB926666265D171500E794EE /* Profile.storyboard */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		DB92667C265D2BE200E794EE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +168,8 @@
 		DB92667D265D2C0C00E794EE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				DB92667A265D2BBE00E794EE /* Profile */,
+				DB926666265D171500E794EE /* Profile.storyboard */,
+				DB2FCFEB265E26B7001A6F21 /* KartStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -209,8 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB92666D265D171700E794EE /* LaunchScreen.storyboard in Resources */,
+				DB2FCFF8265E3810001A6F21 /* KartCell.xib in Resources */,
 				DB92666A265D171700E794EE /* Assets.xcassets in Resources */,
 				DB926668265D171500E794EE /* Profile.storyboard in Resources */,
+				DB2FCFEA265E2014001A6F21 /* KartData.json in Resources */,
+				DB2FCFEC265E26B7001A6F21 /* KartStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,9 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB926683265D314400E794EE /* ProfileWebService.swift in Sources */,
+				DB2FCFF7265E3810001A6F21 /* KartCell.swift in Sources */,
 				DB926681265D2CCE00E794EE /* ProfileModel.swift in Sources */,
 				DB926665265D171500E794EE /* ProfileViewController.swift in Sources */,
 				DB926661265D171500E794EE /* AppDelegate.swift in Sources */,
+				DB2FCFF3265E2A90001A6F21 /* KartTableViewController.swift in Sources */,
 				DB926685265D3C3A00E794EE /* Constants.swift in Sources */,
 				DB92667F265D2C8400E794EE /* ProfileViewModel.swift in Sources */,
 				DB926663265D171500E794EE /* SceneDelegate.swift in Sources */,

@@ -21,9 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         
+//        window = UIWindow(windowScene: scene)
+//        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "ProfileVC") as! ProfileViewController
+//        window?.rootViewController = UINavigationController(rootViewController: vc)
+//        window?.makeKeyAndVisible()
+        
+        
         window = UIWindow(windowScene: scene)
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ProfileVC") as! ProfileViewController
+        let storyboard = UIStoryboard(name: "KartStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "KartVC") as! KartTableViewController
         window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
     }
