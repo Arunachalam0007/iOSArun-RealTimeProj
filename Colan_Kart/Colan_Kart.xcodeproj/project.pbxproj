@@ -16,6 +16,7 @@
 		DB2FCFFD265E4B61001A6F21 /* KartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFFC265E4B61001A6F21 /* KartViewModel.swift */; };
 		DB2FCFFF265E6973001A6F21 /* KartInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFFE265E6973001A6F21 /* KartInfoTableViewController.swift */; };
 		DB2FD002265E7CB7001A6F21 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD001265E7CB7001A6F21 /* MainTabController.swift */; };
+		DB2FD05F265E8816001A6F21 /* Colan_Kart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */; };
 		DB926661265D171500E794EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926660265D171500E794EE /* AppDelegate.swift */; };
 		DB926663265D171500E794EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926662265D171500E794EE /* SceneDelegate.swift */; };
 		DB926665265D171500E794EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926664265D171500E794EE /* ProfileViewController.swift */; };
@@ -38,6 +39,7 @@
 		DB2FCFFC265E4B61001A6F21 /* KartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartViewModel.swift; sourceTree = "<group>"; };
 		DB2FCFFE265E6973001A6F21 /* KartInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartInfoTableViewController.swift; sourceTree = "<group>"; };
 		DB2FD001265E7CB7001A6F21 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		DB2FD05E265E8816001A6F21 /* Colan_Kart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Colan_Kart.xcdatamodel; sourceTree = "<group>"; };
 		DB92665D265D171500E794EE /* Colan_Kart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colan_Kart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB926660265D171500E794EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB926662265D171500E794EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		DB92665F265D171500E794EE /* Colan_Kart */ = {
 			isa = PBXGroup;
 			children = (
+				DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */,
 				DB2FD000265E7BB4001A6F21 /* Datas */,
 				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB926683265D314400E794EE /* ProfileWebService.swift in Sources */,
+				DB2FD05F265E8816001A6F21 /* Colan_Kart.xcdatamodeld in Sources */,
 				DB2FCFFB265E4A34001A6F21 /* KartModel.swift in Sources */,
 				DB2FCFF7265E3810001A6F21 /* KartCell.swift in Sources */,
 				DB926681265D2CCE00E794EE /* ProfileModel.swift in Sources */,
@@ -481,6 +485,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB2FD05E265E8816001A6F21 /* Colan_Kart.xcdatamodel */,
+			);
+			currentVersion = DB2FD05E265E8816001A6F21 /* Colan_Kart.xcdatamodel */;
+			path = Colan_Kart.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB926655265D171500E794EE /* Project object */;
 }
