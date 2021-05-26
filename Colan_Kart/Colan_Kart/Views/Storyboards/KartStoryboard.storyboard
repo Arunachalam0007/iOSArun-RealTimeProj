@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="KartCellIdentifier" rowHeight="176" id="iDE-o2-Oyo" customClass="KartCell" customModule="Colan_Kart" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="176"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="KartCellIdentifier" rowHeight="200" id="iDE-o2-Oyo" customClass="KartCell" customModule="Colan_Kart" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iDE-o2-Oyo" id="HS7-8W-y0s">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="176"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -32,10 +32,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Rvd-F0-85z">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Cud-6k-qXp">
-                            <color key="tintColor" red="0.99607843159999998" green="0.30980393290000002" blue="0.3686274886" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill.badge.plus" catalog="system" id="YqM-lG-yJP">
-                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <color key="tintColor" red="1" green="0.12883876720000001" blue="0.317547841" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="checkKart:" destination="vml-qS-v6F" id="fe6-OB-u8n"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
