@@ -27,12 +27,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = UINavigationController(rootViewController: vc)
 //        window?.makeKeyAndVisible()
         
+//
+//        window = UIWindow(windowScene: scene)
+//        let storyboard = UIStoryboard(name: "KartStoryboard", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "KartVC") as! KartTableViewController
+//        window?.rootViewController = UINavigationController(rootViewController: vc)
+//        window?.makeKeyAndVisible()
+        
         
         window = UIWindow(windowScene: scene)
-        let storyboard = UIStoryboard(name: "KartStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "KartVC") as! KartTableViewController
-        window?.rootViewController = UINavigationController(rootViewController: vc)
+        let mainTabVC = MainTabController()
+        window?.rootViewController = mainTabVC
         window?.makeKeyAndVisible()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

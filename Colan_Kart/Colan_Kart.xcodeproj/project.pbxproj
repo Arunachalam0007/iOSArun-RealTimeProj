@@ -15,6 +15,7 @@
 		DB2FCFFB265E4A34001A6F21 /* KartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFFA265E4A34001A6F21 /* KartModel.swift */; };
 		DB2FCFFD265E4B61001A6F21 /* KartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFFC265E4B61001A6F21 /* KartViewModel.swift */; };
 		DB2FCFFF265E6973001A6F21 /* KartInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FCFFE265E6973001A6F21 /* KartInfoTableViewController.swift */; };
+		DB2FD002265E7CB7001A6F21 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD001265E7CB7001A6F21 /* MainTabController.swift */; };
 		DB926661265D171500E794EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926660265D171500E794EE /* AppDelegate.swift */; };
 		DB926663265D171500E794EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926662265D171500E794EE /* SceneDelegate.swift */; };
 		DB926665265D171500E794EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926664265D171500E794EE /* ProfileViewController.swift */; };
@@ -36,6 +37,7 @@
 		DB2FCFFA265E4A34001A6F21 /* KartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartModel.swift; sourceTree = "<group>"; };
 		DB2FCFFC265E4B61001A6F21 /* KartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartViewModel.swift; sourceTree = "<group>"; };
 		DB2FCFFE265E6973001A6F21 /* KartInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartInfoTableViewController.swift; sourceTree = "<group>"; };
+		DB2FD001265E7CB7001A6F21 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		DB92665D265D171500E794EE /* Colan_Kart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colan_Kart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB926660265D171500E794EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB926662265D171500E794EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DB2FD000265E7BB4001A6F21 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FCFE9265E2014001A6F21 /* KartData.json */,
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
 		DB926654265D171500E794EE = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +108,7 @@
 		DB92665F265D171500E794EE /* Colan_Kart */ = {
 			isa = PBXGroup;
 			children = (
-				DB2FCFE9265E2014001A6F21 /* KartData.json */,
+				DB2FD000265E7BB4001A6F21 /* Datas */,
 				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
 				DB926677265D176900E794EE /* Models */,
@@ -109,7 +119,6 @@
 				DB926660265D171500E794EE /* AppDelegate.swift */,
 				DB926662265D171500E794EE /* SceneDelegate.swift */,
 				DB926669265D171700E794EE /* Assets.xcassets */,
-				DB92666B265D171700E794EE /* LaunchScreen.storyboard */,
 				DB92666E265D171700E794EE /* Info.plist */,
 			);
 			path = Colan_Kart;
@@ -118,6 +127,7 @@
 		DB926674265D173100E794EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB92666B265D171700E794EE /* LaunchScreen.storyboard */,
 				DB92667D265D2C0C00E794EE /* Storyboards */,
 			);
 			path = Views;
@@ -128,6 +138,7 @@
 			children = (
 				DB92667C265D2BE200E794EE /* Profile */,
 				DB2FCFF4265E2A9B001A6F21 /* Kart */,
+				DB2FD001265E7CB7001A6F21 /* MainTabController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +273,7 @@
 				DB926681265D2CCE00E794EE /* ProfileModel.swift in Sources */,
 				DB926665265D171500E794EE /* ProfileViewController.swift in Sources */,
 				DB926661265D171500E794EE /* AppDelegate.swift in Sources */,
+				DB2FD002265E7CB7001A6F21 /* MainTabController.swift in Sources */,
 				DB2FCFFD265E4B61001A6F21 /* KartViewModel.swift in Sources */,
 				DB2FCFFF265E6973001A6F21 /* KartInfoTableViewController.swift in Sources */,
 				DB2FCFF3265E2A90001A6F21 /* KartTableViewController.swift in Sources */,
