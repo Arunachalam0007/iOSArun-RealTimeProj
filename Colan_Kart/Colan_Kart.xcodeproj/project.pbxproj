@@ -21,6 +21,8 @@
 		DB2FD06E265E8E35001A6F21 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD06D265E8E35001A6F21 /* Extensions.swift */; };
 		DB2FD070265E8EE2001A6F21 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD06F265E8EE2001A6F21 /* AuthenticationViewModel.swift */; };
 		DB2FD072265E9627001A6F21 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD071265E9627001A6F21 /* RegistrationViewController.swift */; };
+		DB2FD074265EDC04001A6F21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD073265EDC04001A6F21 /* User.swift */; };
+		DB2FD076265EDDAF001A6F21 /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FD075265EDDAF001A6F21 /* DataBaseHandler.swift */; };
 		DB926661265D171500E794EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926660265D171500E794EE /* AppDelegate.swift */; };
 		DB926663265D171500E794EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926662265D171500E794EE /* SceneDelegate.swift */; };
 		DB926665265D171500E794EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB926664265D171500E794EE /* ProfileViewController.swift */; };
@@ -48,6 +50,8 @@
 		DB2FD06D265E8E35001A6F21 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DB2FD06F265E8EE2001A6F21 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		DB2FD071265E9627001A6F21 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DB2FD073265EDC04001A6F21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DB2FD075265EDDAF001A6F21 /* DataBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
 		DB92665D265D171500E794EE /* Colan_Kart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colan_Kart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB926660265D171500E794EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB926662265D171500E794EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DB2FD077265EDDC8001A6F21 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				DB2FD073265EDC04001A6F21 /* User.swift */,
+				DB2FD075265EDDAF001A6F21 /* DataBaseHandler.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		DB926654265D171500E794EE = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +151,7 @@
 				DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */,
 				DB2FD06C265E8E26001A6F21 /* Extensions */,
 				DB2FD000265E7BB4001A6F21 /* Datas */,
+				DB2FD077265EDDC8001A6F21 /* DataBase */,
 				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
 				DB926677265D176900E794EE /* Models */,
@@ -305,6 +319,7 @@
 				DB2FD06B265E8DDA001A6F21 /* LoginViewController.swift in Sources */,
 				DB2FCFF7265E3810001A6F21 /* KartCell.swift in Sources */,
 				DB926681265D2CCE00E794EE /* ProfileModel.swift in Sources */,
+				DB2FD076265EDDAF001A6F21 /* DataBaseHandler.swift in Sources */,
 				DB926665265D171500E794EE /* ProfileViewController.swift in Sources */,
 				DB926661265D171500E794EE /* AppDelegate.swift in Sources */,
 				DB2FD002265E7CB7001A6F21 /* MainTabController.swift in Sources */,
@@ -316,6 +331,7 @@
 				DB926685265D3C3A00E794EE /* Constants.swift in Sources */,
 				DB92667F265D2C8400E794EE /* ProfileViewModel.swift in Sources */,
 				DB926663265D171500E794EE /* SceneDelegate.swift in Sources */,
+				DB2FD074265EDC04001A6F21 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

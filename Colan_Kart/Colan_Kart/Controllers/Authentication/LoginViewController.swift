@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     
     var loginVM = LoginViewModel()
     
+    
     var colanLogoImage: UIImageView = {
         var colanImage = UIImageView()
         colanImage.image = UIImage(systemName: "cart.badge.plus")
@@ -52,14 +53,6 @@ class LoginViewController: UIViewController {
         dontHaveAccBtn.addTarget(self, action: #selector(handleShowSignUp) , for: .touchUpInside)
         return dontHaveAccBtn
     }()
-    
-    var forgotPasswordBtn: UIButton = {
-        var forgotPassBtn = UIButton(type: .system)
-        
-        forgotPassBtn.setCustomAtrributedTitle(firstPart: "Forgot your password?  ", seccondPart: "Get help signing in")
-        
-        return forgotPassBtn
-    }()
 
     // MARK: - Lifecycle
 
@@ -68,17 +61,19 @@ class LoginViewController: UIViewController {
         configurationUI()
         configurePropertyUI()
         configureNotificationObservers()
+        loginVM.loadData()
     }
     
     // MARK: - Actions
     
     @objc func textFieldDidChanged(sender: UITextField){
-        if sender == mobileTextField {
+        if sender ==  userNameTextF {
             loginVM.email = sender.text
-        } else if sender == userNameTextF {
-            loginVM.password = sender.text
+        } else if sender == mobileTextField {
+            loginVM.mobile = sender.text
         }
-        updateFormBtn()
+        loginBtn.isEnabled = loginVM.btnIsValid
+        loginBtn.backgroundColor = loginVM.btnBackgroundColor
     }
     
     @objc func handleShowSignUp() {
@@ -88,12 +83,17 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleSignIn(){
-        loginVM.email = mobileTextField.text
-        loginVM.password = userNameTextF.text
-        UserDefaults.standard.setIsloggedIn(true)
-        let mainTabController = MainTabController()
-        mainTabController.modalPresentationStyle = .fullScreen
-        self.present(mainTabController, animated: true, completion: nil)
+        
+        let canLogin =  loginVM.canLogin(mobile: loginVM.mobile!)
+        
+        if canLogin {
+            UserDefaults.standard.setIsloggedIn(true)
+            let mainTabController = MainTabController()
+            mainTabController.modalPresentationStyle = .fullScreen
+            self.present(mainTabController, animated: true, completion: nil)
+        } else {
+            print("DEBUG: User Entered Wrong Mobile or Is Not register")
+        }
     }
     
     // MARK: - Helpers
@@ -138,29 +138,10 @@ class LoginViewController: UIViewController {
         stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32).isActive = true
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        
-//        //Add DontHaveAccountBtn to View
-//        view.addSubview(dontHaveAccountBtn)
-//
-//        dontHaveAccountBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-//
-//        dontHaveAccountBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//
-//        dontHaveAccountBtn.translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
        func configureNotificationObservers() {
         mobileTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         userNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
-    }
-}
-
-// MARK: - FormViewModel
-
-extension LoginViewController: FormViewModel {
-    func updateFormBtn() {
-        loginBtn.isEnabled = loginVM.btnIsValid
-        loginBtn.backgroundColor = loginVM.btnBackgroundColor
     }
 }

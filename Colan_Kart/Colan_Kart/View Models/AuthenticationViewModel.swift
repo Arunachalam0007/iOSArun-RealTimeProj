@@ -7,78 +7,56 @@
 
 import UIKit
 
-protocol FormViewModel {
-    func updateFormBtn()
-}
-
-protocol FormAutheticationViewModel {
-    var btnIsValid:Bool { get }
-    var btnBackgroundColor:UIColor { get }
-}
-
-struct FeedAuthenticationViewModel {
+class AuthenticationDB {
+    let dbHandler = DataBaseHandler()
     
-    func getUserLogout(completion: @escaping (String?)->()){
-//        authServie.userLogOut { result in
-//            completion(result)
-//        }
+    func addUser(mobile:String, name:String, email:String)  {
+        let obj = dbHandler.add(User.self)
+        obj?.mobile = mobile
+        obj?.name = name
+        obj?.email = email
+        dbHandler.save()
     }
-    func getCurrentUser(completion: @escaping (String?)->()) {
-//        authServie.getCurrentUser { result in
-//            completion(result)
-//        }
+    
+    func isRegisterdUser(mobile: String) -> Bool {
+        let registerUser = dbHandler.fetch(_type: User.self,mobileInput: mobile)
+        return registerUser.count > 0 ? true : false
+    }
+    
+    func canLogin(mobile: String)  -> Bool {
+        let userInfo = dbHandler.fetch(_type: User.self,mobileInput: mobile)
+        print("DEBUG: ",userInfo.count)
+        return userInfo.count > 0 ? true : false
+    }
+    func loadData(){
+        let users = dbHandler.fetchAll(_type: User.self)
+        print(users.map{$0.mobile})
     }
 }
 
-struct LoginViewModel: FormAutheticationViewModel {
+class LoginViewModel: AuthenticationDB {
     var email:String?
-    var password:String?
+    var mobile:String?
     var btnIsValid:Bool {
-        return email?.isEmpty == false && password?.isEmpty == false
+        return email?.isEmpty == false && mobile?.isEmpty == false
     }
     var btnBackgroundColor:UIColor {
         return btnIsValid ? .systemPurple.withAlphaComponent(1) : .systemPurple.withAlphaComponent(0.2)
     }
     
-    func userLogin(completion: @escaping (String?)->()){
-        guard let email = email, let password = password else {
-            print("DEBUG: Email and Password Should Not Be Empty")
-            return
-        }
-//        AuthService().userLogIn(email: email, password: password) { authDataResult in
-//            guard let authDataResult = authDataResult else {
-//                completion(nil)
-//                return
-//            }
-//            completion(authDataResult.user.email)
-//        }
-    }
 }
 
-struct RegistrationViewModel: FormAutheticationViewModel {
+class RegistrationViewModel: AuthenticationDB {
     var email: String?
-    var password: String?
-    var fullname: String?
+    var mobile: String?
     var username: String?
-    var profileImage: UIImage?
     
     var btnIsValid: Bool {
-        return email?.isEmpty == false && password?.isEmpty == false && fullname?.isEmpty == false && username?.isEmpty == false
+        return email?.isEmpty == false && mobile?.isEmpty == false && username?.isEmpty == false
     }
     
     var btnBackgroundColor: UIColor {
         return btnIsValid ? .systemPurple.withAlphaComponent(1) : .systemPurple.withAlphaComponent(0.2)
     }
     
-    func registerUserDetails(completion:@escaping (String?)->()) {
-        guard let email = email,let password = password,let fullname = fullname,let username = username,let profileImageData = profileImage?.jpegData(compressionQuality: 0.7) else {
-            print("DEBUG: please fill all your information")
-            return
-        }
-        
-//        let authCredentials = AuthenticationCredentials(email: email, password: password, username: username, fullname: fullname, imageData: profileImageData)
-//        AuthService().registerUser(authCredentials: authCredentials) { response in
-//            completion(response)
-//        }
-    }
 }

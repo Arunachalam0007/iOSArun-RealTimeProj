@@ -16,6 +16,7 @@ class RegistrationViewController: UIViewController {
     
     let mobileTextF: UITextField = {
         let mobTF = CustomTextField(placeHolderName: "Mobile Number")
+        mobTF.keyboardType = .numberPad
         return mobTF
     }()
     
@@ -59,16 +60,20 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc func handleShowSignUp(){
-        registrationVM.email = emailTextF.text
-        registrationVM.fullname = mobileTextF.text
-        registrationVM.username = userNameTextF.text
+        let isRegisteredUser =  registrationVM.isRegisterdUser(mobile: registrationVM.mobile!)
         
-        // Perform Storing Value Into DB
-        
-        UserDefaults.standard.setIsloggedIn(true)
-        let mainTabController = MainTabController()
-        mainTabController.modalPresentationStyle = .fullScreen
-        self.present(mainTabController, animated: true)
+        if isRegisteredUser {
+            print("DEBUG: User Email is Already Registerd")
+        } else {
+            
+            guard let mobile = registrationVM.mobile, let name = registrationVM.username, let email = registrationVM.email else { return  }
+            registrationVM.addUser(mobile: mobile, name: name, email: email)
+            registrationVM.dbHandler.save()
+            UserDefaults.standard.setIsloggedIn(true)
+            let mainTabController = MainTabController()
+            mainTabController.modalPresentationStyle = .fullScreen
+            self.present(mainTabController, animated: true)
+        }
 
     }
     
@@ -78,9 +83,10 @@ class RegistrationViewController: UIViewController {
         }else if sender == userNameTextF {
             registrationVM.username = sender.text
         } else if sender == mobileTextF {
-            registrationVM.fullname = sender.text
+            registrationVM.mobile = sender.text
         }
-        updateFormBtn()
+        signUpBtn.isEnabled = registrationVM.btnIsValid
+        signUpBtn.backgroundColor = registrationVM.btnBackgroundColor
     }
 
     // MARK: - Lifecycle
@@ -119,14 +125,5 @@ class RegistrationViewController: UIViewController {
         emailTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         mobileTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         userNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
-    }
-}
-
-// MARK: - FormViewModel
-
-extension RegistrationViewController: FormViewModel {
-    func updateFormBtn() {
-        signUpBtn.isEnabled = registrationVM.btnIsValid
-        signUpBtn.backgroundColor = registrationVM.btnBackgroundColor
     }
 }
