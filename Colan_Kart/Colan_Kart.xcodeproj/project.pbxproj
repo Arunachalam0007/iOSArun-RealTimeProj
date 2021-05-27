@@ -95,12 +95,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		DB2FD000265E7BB4001A6F21 /* Datas */ = {
+		DB2FD000265E7BB4001A6F21 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				DB2FCFE9265E2014001A6F21 /* KartData.json */,
 			);
-			path = Datas;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		DB2FD069265E8DC9001A6F21 /* Authentication */ = {
@@ -149,15 +149,14 @@
 			children = (
 				DB2FD05D265E8816001A6F21 /* Colan_Kart.xcdatamodeld */,
 				DB2FD06C265E8E26001A6F21 /* Extensions */,
-				DB2FD000265E7BB4001A6F21 /* Datas */,
-				DB2FD077265EDDC8001A6F21 /* DataBase */,
-				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
-				DB2FCFF9265E3845001A6F21 /* Cells */,
+				DB926679265D178000E794EE /* Web Services */,
+				DB2FD077265EDDC8001A6F21 /* DataBase */,
 				DB926677265D176900E794EE /* Models */,
 				DB926676265D175E00E794EE /* View Models */,
 				DB926675265D175500E794EE /* Controllers */,
 				DB926674265D173100E794EE /* Views */,
+				DB2FD000265E7BB4001A6F21 /* Data */,
 				DB926660265D171500E794EE /* AppDelegate.swift */,
 				DB926662265D171500E794EE /* SceneDelegate.swift */,
 				DB926669265D171700E794EE /* Assets.xcassets */,
@@ -169,7 +168,7 @@
 		DB926674265D173100E794EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DB92666B265D171700E794EE /* LaunchScreen.storyboard */,
+				DB2FCFF9265E3845001A6F21 /* Cells */,
 				DB92667D265D2C0C00E794EE /* Storyboards */,
 			);
 			path = Views;
@@ -233,6 +232,7 @@
 		DB92667D265D2C0C00E794EE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				DB92666B265D171700E794EE /* LaunchScreen.storyboard */,
 				DB926666265D171500E794EE /* Profile.storyboard */,
 				DB2FCFEB265E26B7001A6F21 /* KartStoryboard.storyboard */,
 			);
