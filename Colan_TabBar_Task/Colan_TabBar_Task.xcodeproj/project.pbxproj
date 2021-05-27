@@ -14,6 +14,7 @@
 		DB218E8A265FABF200D60D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB218E89265FABF200D60D25 /* Assets.xcassets */; };
 		DB218E8D265FABF200D60D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB218E8B265FABF200D60D25 /* LaunchScreen.storyboard */; };
 		DB218E95265FAD5400D60D25 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB218E94265FAD5400D60D25 /* HomeCollectionViewCell.swift */; };
+		DB218E98265FB60A00D60D25 /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB218E97265FB60A00D60D25 /* AllViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DB218E8C265FABF200D60D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB218E8E265FABF200D60D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB218E94265FAD5400D60D25 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DB218E97265FB60A00D60D25 /* AllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,9 @@
 		DB218E7F265FABF000D60D25 /* Colan_TabBar_Task */ = {
 			isa = PBXGroup;
 			children = (
+				DB218E96265FB5E100D60D25 /* VIewControllers */,
 				DB218E80265FABF000D60D25 /* AppDelegate.swift */,
 				DB218E82265FABF000D60D25 /* SceneDelegate.swift */,
-				DB218E84265FABF000D60D25 /* ViewController.swift */,
 				DB218E86265FABF000D60D25 /* Main.storyboard */,
 				DB218E89265FABF200D60D25 /* Assets.xcassets */,
 				DB218E8B265FABF200D60D25 /* LaunchScreen.storyboard */,
@@ -68,6 +70,15 @@
 				DB218E94265FAD5400D60D25 /* HomeCollectionViewCell.swift */,
 			);
 			path = Colan_TabBar_Task;
+			sourceTree = "<group>";
+		};
+		DB218E96265FB5E100D60D25 /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB218E84265FABF000D60D25 /* ViewController.swift */,
+				DB218E97265FB60A00D60D25 /* AllViewController.swift */,
+			);
+			path = VIewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			files = (
 				DB218E85265FABF000D60D25 /* ViewController.swift in Sources */,
 				DB218E81265FABF000D60D25 /* AppDelegate.swift in Sources */,
+				DB218E98265FB60A00D60D25 /* AllViewController.swift in Sources */,
 				DB218E83265FABF000D60D25 /* SceneDelegate.swift in Sources */,
 				DB218E95265FAD5400D60D25 /* HomeCollectionViewCell.swift in Sources */,
 			);
