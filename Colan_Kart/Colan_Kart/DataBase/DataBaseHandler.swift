@@ -22,7 +22,7 @@ class DataBaseHandler {
     func fetch<T: NSManagedObject> (_type: T.Type, mobileInput:String) -> [T] {
         let fetchRequest = T.fetchRequest()
 
-        fetchRequest.predicate = NSPredicate(format: "mobile CONTAINS %@", mobileInput)
+        fetchRequest.predicate = NSPredicate(format: "mobile == %@", mobileInput)
         do {
             let result = try viewContext.fetch(fetchRequest) as! [T]
             return result

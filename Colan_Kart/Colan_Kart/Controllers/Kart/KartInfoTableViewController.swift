@@ -13,13 +13,21 @@ class KartInfoTableViewController: UITableViewController {
 
     var kartVM: KartViewModel?
     
+    // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    // MARK: - Helper
+    
+    func configureUI(){
         navigationItem.title = "Your Kart"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
         tableView.register(UINib(nibName: Constants.Kart.kartNibName, bundle: nil), forCellReuseIdentifier: Constants.Kart.kartCellIdentifier)
     }
+    
 
     // MARK: - Table view data source
 

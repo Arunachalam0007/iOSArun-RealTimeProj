@@ -29,9 +29,10 @@ class LoginViewController: UIViewController {
         return mobileTextF
     }()
     
-    var userNameTextF: UITextField = {
-        var userNameTextF = CustomTextField(placeHolderName: "User Name")
-        return userNameTextF
+    var emailTextField: UITextField = {
+        var emailTextField = CustomTextField(placeHolderName: "Email")
+        emailTextField.keyboardType = .emailAddress
+        return emailTextField
     }()
     
     var loginBtn: UIButton = {
@@ -61,13 +62,12 @@ class LoginViewController: UIViewController {
         configurationUI()
         configurePropertyUI()
         configureNotificationObservers()
-        loginVM.loadData()
     }
     
     // MARK: - Actions
     
     @objc func textFieldDidChanged(sender: UITextField){
-        if sender ==  userNameTextF {
+        if sender ==  emailTextField {
             loginVM.email = sender.text
         } else if sender == mobileTextField {
             loginVM.mobile = sender.text
@@ -92,7 +92,11 @@ class LoginViewController: UIViewController {
             mainTabController.modalPresentationStyle = .fullScreen
             self.present(mainTabController, animated: true, completion: nil)
         } else {
-            print("DEBUG: User Entered Wrong Mobile or Is Not register")
+            let refreshAlert = UIAlertController(title: "Login Failed", message: "Mobile Number is Not Register or Enterd Wrong Number", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            }))
+            present(refreshAlert, animated: true, completion: nil)
         }
     }
     
@@ -104,6 +108,8 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         
         configureGradientLayer()
+        mobileTextField.delegate = self
+        self.hideKeyboardWhenTappedAround()
 
     }
     
@@ -124,7 +130,7 @@ class LoginViewController: UIViewController {
         //Add mobileTextField, userNameTextField,LoginBtn,ForgotpassowrdBtn to View
         
         let stackView = UIStackView(arrangedSubviews: [mobileTextField,
-                                                       userNameTextF,
+                                                       emailTextField,
                                                        loginBtn,
                                                        dontHaveAccountBtn])
         stackView.axis = .vertical
@@ -142,6 +148,21 @@ class LoginViewController: UIViewController {
     
        func configureNotificationObservers() {
         mobileTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
-        userNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+    }
+}
+
+// MARK: -  Delegate
+
+extension LoginViewController: UITextFieldDelegate {
+    //MARK - UITextField Delegates
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //For mobile numer validation
+        if textField == mobileTextField {
+            let allowedCharacters = CharacterSet(charactersIn:"+0123456789")
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
+        return true
     }
 }

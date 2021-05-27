@@ -34,9 +34,8 @@ class KartCell: UITableViewCell, UITextFieldDelegate {
     
     //MARK - UITextField Delegates
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //For mobile numer validation
         if textField == quantityValue {
-            let allowedCharacters = CharacterSet(charactersIn:"0123456789 ")//Here change this characters based on your requirement
+            let allowedCharacters = CharacterSet(charactersIn:"0123456789")
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
         }

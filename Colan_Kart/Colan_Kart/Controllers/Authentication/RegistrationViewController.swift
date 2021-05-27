@@ -63,7 +63,11 @@ class RegistrationViewController: UIViewController {
         let isRegisteredUser =  registrationVM.isRegisterdUser(mobile: registrationVM.mobile!)
         
         if isRegisteredUser {
-            print("DEBUG: User Email is Already Registerd")
+            let refreshAlert = UIAlertController(title: "Registration Failed", message: "Mobile Number is already Registered", preferredStyle: UIAlertController.Style.alert)
+
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            }))
+            present(refreshAlert, animated: true, completion: nil)
         } else {
             
             guard let mobile = registrationVM.mobile, let name = registrationVM.username, let email = registrationVM.email else { return  }
@@ -103,6 +107,9 @@ class RegistrationViewController: UIViewController {
         
         configureGradientLayer()
 
+        
+        mobileTextF.delegate = self
+        self.hideKeyboardWhenTappedAround()
         // add stackviw of textFields and btn
         
         let stackView = UIStackView(arrangedSubviews: [mobileTextF,
@@ -125,5 +132,20 @@ class RegistrationViewController: UIViewController {
         emailTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         mobileTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
         userNameTextF.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+    }
+}
+
+// MARK: -  Delegate
+
+extension RegistrationViewController: UITextFieldDelegate {
+    //MARK - UITextField Delegates
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //For mobile numer validation
+        if textField == mobileTextF {
+            let allowedCharacters = CharacterSet(charactersIn:"+0123456789")
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
+        return true
     }
 }

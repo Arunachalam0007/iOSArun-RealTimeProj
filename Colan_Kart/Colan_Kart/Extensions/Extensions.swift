@@ -7,6 +7,31 @@
 
 import UIKit
 
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+         view.endEditing(true)
+     }
+    
+    func configureGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [ UIColor.systemPurple.cgColor , UIColor.systemBlue.cgColor]
+       // gradient.locations = [0,1]
+
+        view.layer.addSublayer(gradient)
+        // We must set view frame to gradient frame
+        gradient.frame = view.frame
+    }
+}
+
+
 extension UIButton {
     func setCustomAtrributedTitle(firstPart: String, seccondPart: String){
         let attri: [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.87) , .font: UIFont.systemFont(ofSize: 16)]
@@ -26,19 +51,6 @@ extension UIButton {
     func setWidth(_ width: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalToConstant: width).isActive = true
-    }
-}
-
-
-extension UIViewController {
-    func configureGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [ UIColor.systemPurple.cgColor , UIColor.systemBlue.cgColor]
-       // gradient.locations = [0,1]
-
-        view.layer.addSublayer(gradient)
-        // We must set view frame to gradient frame
-        gradient.frame = view.frame
     }
 }
 
@@ -72,6 +84,7 @@ class CustomTextField: UITextField {
         // here leftView is The overlay view that displays on the left
         leftView = spaceLeftSide
         leftViewMode = .always //left overlay view appears in the text fiel
+        
     }
     
     required init?(coder: NSCoder) {

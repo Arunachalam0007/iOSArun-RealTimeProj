@@ -123,7 +123,6 @@
 		DB2FD077265EDDC8001A6F21 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				DB2FD073265EDC04001A6F21 /* User.swift */,
 				DB2FD075265EDDAF001A6F21 /* DataBaseHandler.swift */,
 			);
 			path = DataBase;
@@ -154,8 +153,8 @@
 				DB2FD077265EDDC8001A6F21 /* DataBase */,
 				DB926679265D178000E794EE /* Web Services */,
 				DB926678265D177700E794EE /* Utils */,
-				DB926677265D176900E794EE /* Models */,
 				DB2FCFF9265E3845001A6F21 /* Cells */,
+				DB926677265D176900E794EE /* Models */,
 				DB926676265D175E00E794EE /* View Models */,
 				DB926675265D175500E794EE /* Controllers */,
 				DB926674265D173100E794EE /* Views */,
@@ -200,6 +199,7 @@
 		DB926677265D176900E794EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB2FD073265EDC04001A6F21 /* User.swift */,
 				DB926680265D2CCE00E794EE /* ProfileModel.swift */,
 				DB2FCFFA265E4A34001A6F21 /* KartModel.swift */,
 			);

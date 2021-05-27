@@ -37,6 +37,7 @@ class KartTableViewController: UITableViewController {
     // MARK: - Helpers
 
     func configureUI() {
+        self.hideKeyboardWhenTappedAround()
         tableView.register(UINib(nibName: Constants.Kart.kartNibName, bundle: nil), forCellReuseIdentifier: Constants.Kart.kartCellIdentifier)
     }
 
